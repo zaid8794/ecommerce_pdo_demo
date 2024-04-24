@@ -145,7 +145,7 @@ $offset = ($pageno - 1)  * $no_of_records_per_page;
             <tbody>
                 <?php
                 $n = 1;
-                foreach ($obj->get('products LEFT JOIN category ON products.category_id = category.category_id LEFT JOIN brand ON products.brand_id = brand.brand_id ORDER BY products.product_id DESC', $offset, $no_of_records_per_page) as $row) {
+                foreach ($obj->get('products LEFT JOIN category ON products.category_id = category.category_id LEFT JOIN brand ON products.brand_id = brand.brand_id ORDER BY products.product_id ASC', $offset, $no_of_records_per_page) as $row) {
                 ?>
                     <tr id="product_<?= $row['product_id']; ?>">
                         <td><?= $row['product_id']; ?></td>

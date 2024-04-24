@@ -8,7 +8,7 @@ if ($_POST['form_type'] == 'save') {
     if ($_FILES['product_thumbnail']['error'] == UPLOAD_ERR_OK) {
         $file_name = $_FILES['product_thumbnail']['name'];
         $tmp_file_name = $_FILES['product_thumbnail']['tmp_name'];
-        $file_etension_name = pathinfo($file_name, PATHINFO_EXTENSION);
+        $file_etension_name = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
         $file_size = $_FILES['product_thumbnail']['size'];
         if (!in_array($file_etension_name, $allowed_types)) {
             $result = [
